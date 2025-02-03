@@ -1,4 +1,4 @@
-/* Reset some default browser styles */
+/* Reset and basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,29 +6,37 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
   color: #333;
+  padding-bottom: 40px;
 }
 
 /* Header styling */
 header {
   background-color: #004a99;
   color: #fff;
-  padding: 20px 0;
   text-align: center;
+  padding: 20px 10px;
 }
 
 header h1 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 2em;
 }
 
-/* Navigation menu styling */
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 nav ul li {
@@ -39,53 +47,69 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffdd00;
 }
 
 /* Main content styling */
 main {
-  max-width: 1000px;
-  margin: 20px auto;
+  max-width: 960px;
+  margin: 30px auto;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
 }
 
 section {
-  padding: 20px 0;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
 }
 
-section:last-of-type {
-  border-bottom: none;
-}
-
-h2, h3 {
+section h2 {
   color: #004a99;
   margin-bottom: 15px;
+  border-bottom: 2px solid #004a99;
+  padding-bottom: 5px;
 }
 
-p {
-  line-height: 1.6;
+section p {
   margin-bottom: 15px;
 }
 
-/* Image styling */
-img {
+.responsive-img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 15px 0;
+  margin: 15px auto;
 }
 
-/* List styling */
+.logo {
+  max-width: 150px;
+  display: block;
+  margin: 10px auto;
+}
+
+figure {
+  text-align: center;
+  margin: 20px 0;
+}
+
+figure figcaption {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Lists */
 ul {
   margin-left: 20px;
   margin-bottom: 15px;
 }
 
-.references ul {
-  list-style: disc;
-  padding-left: 20px;
+ul li {
+  margin-bottom: 8px;
 }
 
 /* Footer styling */
@@ -93,15 +117,19 @@ footer {
   background-color: #004a99;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 15px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Link styling */
 a {
   color: #004a99;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ff6600;
 }

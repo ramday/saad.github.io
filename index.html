@@ -1,114 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Equity Equation Project: Policy Impact on School Enrollment</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts for modern typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Tariq - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav-container">
-      <div class="logo">
-        <a href="#">Equity Equation</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#analysis">Analysis</a></li>
-        <li><a href="#references">References</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle">
-        <span class="hamburger"></span>
-      </button>
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">ST</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Policy Impact on School Enrollment</h1>
-        <p>The Equity Equation Project is transforming education planning in Pakistan by addressing the challenge of 26+ million out-of-school children with advanced computational models.</p>
-        <a href="#summary" class="btn-primary">Learn More</a>
-      </div>
-    </section>
-  </header>
 
-  <main>
-    <!-- Project Summary Section -->
-    <section id="summary" class="content-section fadeIn">
-      <div class="section-container">
-        <h2>Project Summary</h2>
-        <p>
-          The Equity Equation Project harnesses the power of agent-based modeling, causal graphical modeling, and spatial analysis to simulate policy impacts on school enrollment. Our mission is to empower policymakers to make evidence-based decisions to increase enrollment among marginalized communities.
-        </p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Education_symbol.svg" alt="Education Symbol" class="responsive-img" />
-      </div>
-    </section>
-
-    <!-- About the Project Section -->
-    <section id="about" class="content-section fadeIn">
-      <div class="section-container grid-two">
-        <div class="text-content">
-          <h2>About the Project</h2>
-          <p>
-            By integrating census data, household surveys, and GIS information, our model offers a comprehensive tool to simulate various policy interventions. This project invites experts in computational modeling, machine learning, and GIS to join us in revolutionizing education planning in Pakistan.
-          </p>
-          <p>
-            We draw on global research and reports from trusted sources such as the World Bank, UNESCO, and UNICEF to build a robust and scalable model.
-          </p>
-          <a href="https://www.worldbank.org/en/topic/education" target="_blank" rel="noopener noreferrer" class="btn-secondary">World Bank Education Data</a>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Saad Tariq">Saad Tariq</h1>
+                <p class="typewriter">Software Engineering Student</p>
+                <div class="social-links">
+                    <a href="https://github.com/ramday" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/saad-a500b0287" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:saadramaday@outlook.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="image-content">
-          <img src="https://www.worldbank.org/content/dam/wbr/brand/logos/WorldBankLogo-blue-2x.png" alt="World Bank Logo" class="logo" />
-          <p class="image-caption">Trusted insights from the World Bank.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Data & Analysis Section -->
-    <section id="analysis" class="content-section fadeIn">
-      <div class="section-container">
-        <h2>Data & Analysis</h2>
-        <p>
-          The interactive chart below presents a simulation of how policy interventions might impact school enrollment over time. Our data is informed by reputable sources such as UNESCO and UNICEF.
-        </p>
-        <div class="chart-container">
-          <canvas id="enrollmentChart"></canvas>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Software Engineering student with a focus on AI and web development. I love building applications that make a difference and exploring new technologies.</p>
+                    <div class="skills">
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>React</span>
+                        <span>AI</span>
+                        <span>Machine Learning</span>
+                        <span>Web Development</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="external-links">
-          <h3>Additional Data Sources</h3>
-          <ul>
-            <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">UNICEF – Education Data</a></li>
-            <li><a href="https://uis.unesco.org/en/topic/education" target="_blank" rel="noopener noreferrer">UNESCO Institute for Statistics</a></li>
-            <li><a href="https://www.oecd.org/education/" target="_blank" rel="noopener noreferrer">OECD Education Policy</a></li>
-            <li><a href="https://www.rapidcluster.com/reports/education-policy-analysis" target="_blank" rel="noopener noreferrer">Education Policy Analysis Report</a></li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- References Section -->
-    <section id="references" class="content-section fadeIn">
-      <div class="section-container">
-        <h2>References & Further Reading</h2>
-        <ul class="reference-list">
-          <li><a href="https://www.worldbank.org/en/topic/education/brief/education-for-all" target="_blank" rel="noopener noreferrer">World Bank – Education for All</a></li>
-          <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">UNICEF – Education</a></li>
-          <li><a href="https://www.un.org/sustainabledevelopment/quality-education/" target="_blank" rel="noopener noreferrer">United Nations – Quality Education</a></li>
-          <li><a href="https://www.oecd.org/education/" target="_blank" rel="noopener noreferrer">OECD – Education Policy and Research</a></li>
-        </ul>
-      </div>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Multilingual Dictionary App</h3>
+                        <p>A comprehensive dictionary application supporting multiple languages with an intuitive interface.</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>SQL</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>E-commerce Store</h3>
+                        <p>Full-featured online shopping platform with modern design and seamless user experience.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AI CV Builder</h3>
+                        <p>Smart resume builder using AI agents to create professional CVs with optimal content.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>AI</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AI Email Helper</h3>
+                        <p>Intelligent email assistant using CrewAI for enhanced communication and productivity.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>CrewAI</span>
+                            <span>APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Equity Equation Project. All rights reserved.</p>
-  </footer>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Saad Tariq. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

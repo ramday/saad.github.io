@@ -1,11 +1,11 @@
-// Ensure the DOM is loaded before executing scripts
-document.addEventListener("DOMContentLoaded", function() {
-  // Smooth scrolling for navigation links
+// Wait for DOM to load before executing
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scrolling for nav links
   const navLinks = document.querySelectorAll('nav ul li a');
   navLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      const targetID = this.getAttribute("href").substring(1);
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute("href").slice(1);
       const targetSection = document.getElementById(targetID);
       if (targetSection) {
         window.scrollTo({
@@ -13,10 +13,41 @@ document.addEventListener("DOMContentLoaded", function() {
           behavior: "smooth"
         });
       }
+      // If mobile nav is open, close it after clicking
+      if (window.innerWidth < 768) {
+        document.querySelector(".nav-links").classList.remove("active");
+      }
     });
   });
 
-  // Initialize the Chart.js line chart for enrollment simulation
+  // Mobile navigation toggle
+  const navToggle = document.getElementById("nav-toggle");
+  navToggle.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.toggle("active");
+  });
+
+  // Animate sections on scroll (basic implementation)
+  const faders = document.querySelectorAll(".fadeIn");
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+
+  // Initialize Chart.js for Enrollment Simulation
   const ctx = document.getElementById('enrollmentChart').getContext('2d');
   const enrollmentChart = new Chart(ctx, {
     type: 'line',
@@ -29,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
           borderColor: '#004a99',
           backgroundColor: 'rgba(0,74,153,0.1)',
           fill: true,
-          tension: 0.3
+          tension: 0.3,
+          pointRadius: 4
         },
         {
           label: 'Enrollment Gap Reduction (%)',
@@ -37,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
           borderColor: '#ff6600',
           backgroundColor: 'rgba(255,102,0,0.1)',
           fill: true,
-          tension: 0.3
+          tension: 0.3,
+          pointRadius: 4
         }
       ]
     },

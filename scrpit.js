@@ -1,110 +1,73 @@
-// Wait for DOM to load before executing
-document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scrolling for nav links
-  const navLinks = document.querySelectorAll('nav ul li a');
-  navLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetID = this.getAttribute("href").slice(1);
-      const targetSection = document.getElementById(targetID);
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 20,
-          behavior: "smooth"
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-      }
-      // If mobile nav is open, close it after clicking
-      if (window.innerWidth < 768) {
-        document.querySelector(".nav-links").classList.remove("active");
-      }
     });
-  });
 
-  // Mobile navigation toggle
-  const navToggle = document.getElementById("nav-toggle");
-  navToggle.addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.toggle("active");
-  });
-
-  // Animate sections on scroll (basic implementation)
-  const faders = document.querySelectorAll(".fadeIn");
-  const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-  };
-  
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-        observer.unobserve(entry.target);
-      }
+    // Mobile navigation
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger?.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
-  }, appearOptions);
 
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
 
-  // Initialize Chart.js for Enrollment Simulation
-  const ctx = document.getElementById('enrollmentChart').getContext('2d');
-  const enrollmentChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
-      datasets: [
-        {
-          label: 'Projected Enrollment Increase (%)',
-          data: [2, 4, 8, 12, 18, 25, 32],
-          borderColor: '#004a99',
-          backgroundColor: 'rgba(0,74,153,0.1)',
-          fill: true,
-          tension: 0.3,
-          pointRadius: 4
-        },
-        {
-          label: 'Enrollment Gap Reduction (%)',
-          data: [1, 2, 5, 7, 10, 15, 20],
-          borderColor: '#ff6600',
-          backgroundColor: 'rgba(255,102,0,0.1)',
-          fill: true,
-          tension: 0.3,
-          pointRadius: 4
+    // Project cards animation
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        observer.observe(card);
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    contactForm?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thanks for reaching out! I\'ll get back to you soon.');
+        contactForm.reset();
+    });
+
+    // Typewriter effect
+    const typewriterText = document.querySelector('.typewriter');
+    const text = typewriterText.textContent;
+    typewriterText.textContent = '';
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            typewriterText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
         }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: 'Simulated Impact of Policy Interventions on School Enrollment'
-        },
-        tooltip: {
-          mode: 'index',
-          intersect: false,
-        }
-      },
-      interaction: {
-        mode: 'nearest',
-        intersect: false
-      },
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'Year'
-          }
-        },
-        y: {
-          title: {
-            display: true,
-            text: 'Percentage Change (%)'
-          },
-          beginAtZero: true
-        }
-      }
     }
-  });
+
+    typeWriter();
 });

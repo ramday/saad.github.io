@@ -1,121 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Equity Equation Project: Policy Impact on School Enrollment</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Chart.js CDN for data visualization -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Equity Equation Project</h1>
-    <p class="subtitle">Policy Impact on School Enrollment in Pakistan</p>
-    <nav>
-      <ul>
-        <li><a href="#summary">Project Summary</a></li>
-        <li><a href="#about">About the Project</a></li>
-        <li><a href="#analysis">Data & Analysis</a></li>
+  <header class="site-header">
+    <nav class="nav-container">
+      <div class="logo">
+        <a href="#">Equity Equation</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#analysis">Analysis</a></li>
         <li><a href="#references">References</a></li>
       </ul>
+      <button class="nav-toggle" id="nav-toggle">
+        <span class="hamburger"></span>
+      </button>
     </nav>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Policy Impact on School Enrollment</h1>
+        <p>The Equity Equation Project is transforming education planning in Pakistan by addressing the challenge of 26+ million out-of-school children with advanced computational models.</p>
+        <a href="#summary" class="btn-primary">Learn More</a>
+      </div>
+    </section>
   </header>
 
   <main>
     <!-- Project Summary Section -->
-    <section id="summary">
-      <h2>Project Summary</h2>
-      <p>
-        The Equity Equation Project seeks to revolutionize education planning in Pakistan by developing a sophisticated computational model to address the persistent challenge of over <strong>26 million out-of-school children</strong>.
-        By leveraging advanced computational techniques, this initiative aims to empower policymakers with evidence-based insights to drastically increase school enrollment,
-        especially among marginalized communities.
-      </p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Education_symbol.svg" alt="Education Icon" class="responsive-img">
+    <section id="summary" class="content-section fadeIn">
+      <div class="section-container">
+        <h2>Project Summary</h2>
+        <p>
+          The Equity Equation Project harnesses the power of agent-based modeling, causal graphical modeling, and spatial analysis to simulate policy impacts on school enrollment. Our mission is to empower policymakers to make evidence-based decisions to increase enrollment among marginalized communities.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Education_symbol.svg" alt="Education Symbol" class="responsive-img" />
+      </div>
     </section>
 
     <!-- About the Project Section -->
-    <section id="about">
-      <h2>About the Project</h2>
-      <p>
-        This project employs advanced techniques in agent-based modeling (ABM), causal graphical modeling, and spatial analysis to simulate the impact of various policies on school enrollment.
-        By integrating diverse datasets—including census data, household surveys, and GIS information—the model provides policymakers with a powerful tool to understand the complex interplay of factors influencing educational access.
-      </p>
-      <p>
-        Researchers with expertise in computational modeling, machine learning, and geographic information systems (GIS) are invited to collaborate on this cutting-edge initiative.
-        Our approach promises to identify optimal policy interventions that can lead to increased enrollment and enhanced equity in education.
-      </p>
-      <figure>
-        <img src="https://www.worldbank.org/content/dam/wbr/brand/logos/WorldBankLogo-blue-2x.png" alt="World Bank Logo" class="logo">
-        <figcaption>Data and insights provided in part by the World Bank.</figcaption>
-      </figure>
+    <section id="about" class="content-section fadeIn">
+      <div class="section-container grid-two">
+        <div class="text-content">
+          <h2>About the Project</h2>
+          <p>
+            By integrating census data, household surveys, and GIS information, our model offers a comprehensive tool to simulate various policy interventions. This project invites experts in computational modeling, machine learning, and GIS to join us in revolutionizing education planning in Pakistan.
+          </p>
+          <p>
+            We draw on global research and reports from trusted sources such as the World Bank, UNESCO, and UNICEF to build a robust and scalable model.
+          </p>
+          <a href="https://www.worldbank.org/en/topic/education" target="_blank" rel="noopener noreferrer" class="btn-secondary">World Bank Education Data</a>
+        </div>
+        <div class="image-content">
+          <img src="https://www.worldbank.org/content/dam/wbr/brand/logos/WorldBankLogo-blue-2x.png" alt="World Bank Logo" class="logo" />
+          <p class="image-caption">Trusted insights from the World Bank.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Data & Analysis Section -->
-    <section id="analysis">
-      <h2>Data & Analysis</h2>
-      <p>
-        The interactive chart below represents a sample simulation of how various policy interventions could influence school enrollment over time.
-        The dataset is illustrative and draws upon global trends reported by organizations such as the World Bank, UNESCO, and UNICEF.
-      </p>
-      <canvas id="enrollmentChart"></canvas>
-      <script>
-        // The Chart.js code is included in script.js for enhanced separation of concerns.
-      </script>
-      <h3>Additional Data Sources & Visuals</h3>
-      <ul>
-        <li>
-          <a href="https://www.worldbank.org/en/topic/education" target="_blank" rel="noopener noreferrer">
-            World Bank – Education Overview
-          </a>
-        </li>
-        <li>
-          <a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">
-            UNICEF – Education Data
-          </a>
-        </li>
-        <li>
-          <a href="https://uis.unesco.org/en/topic/education" target="_blank" rel="noopener noreferrer">
-            UNESCO Institute for Statistics – Education
-          </a>
-        </li>
-        <li>
-          <a href="https://www.rapidcluster.com/reports/education-policy-analysis" target="_blank" rel="noopener noreferrer">
-            Sample Report on Education Policy Analysis
-          </a>
-        </li>
-      </ul>
+    <section id="analysis" class="content-section fadeIn">
+      <div class="section-container">
+        <h2>Data & Analysis</h2>
+        <p>
+          The interactive chart below presents a simulation of how policy interventions might impact school enrollment over time. Our data is informed by reputable sources such as UNESCO and UNICEF.
+        </p>
+        <div class="chart-container">
+          <canvas id="enrollmentChart"></canvas>
+        </div>
+        <div class="external-links">
+          <h3>Additional Data Sources</h3>
+          <ul>
+            <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">UNICEF – Education Data</a></li>
+            <li><a href="https://uis.unesco.org/en/topic/education" target="_blank" rel="noopener noreferrer">UNESCO Institute for Statistics</a></li>
+            <li><a href="https://www.oecd.org/education/" target="_blank" rel="noopener noreferrer">OECD Education Policy</a></li>
+            <li><a href="https://www.rapidcluster.com/reports/education-policy-analysis" target="_blank" rel="noopener noreferrer">Education Policy Analysis Report</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- References Section -->
-    <section id="references">
-      <h2>References & Further Reading</h2>
-      <ul>
-        <li>
-          <a href="https://www.worldbank.org/en/topic/education/brief/education-for-all" target="_blank" rel="noopener noreferrer">
-            World Bank – Education for All
-          </a>
-        </li>
-        <li>
-          <a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">
-            UNICEF – Education
-          </a>
-        </li>
-        <li>
-          <a href="https://www.un.org/sustainabledevelopment/quality-education/" target="_blank" rel="noopener noreferrer">
-            United Nations – Quality Education
-          </a>
-        </li>
-        <li>
-          <a href="https://www.oecd.org/education/" target="_blank" rel="noopener noreferrer">
-            OECD – Education Policy and Research
-          </a>
-        </li>
-      </ul>
+    <section id="references" class="content-section fadeIn">
+      <div class="section-container">
+        <h2>References & Further Reading</h2>
+        <ul class="reference-list">
+          <li><a href="https://www.worldbank.org/en/topic/education/brief/education-for-all" target="_blank" rel="noopener noreferrer">World Bank – Education for All</a></li>
+          <li><a href="https://www.unicef.org/education" target="_blank" rel="noopener noreferrer">UNICEF – Education</a></li>
+          <li><a href="https://www.un.org/sustainabledevelopment/quality-education/" target="_blank" rel="noopener noreferrer">United Nations – Quality Education</a></li>
+          <li><a href="https://www.oecd.org/education/" target="_blank" rel="noopener noreferrer">OECD – Education Policy and Research</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2025 Equity Equation Project. All rights reserved.</p>
   </footer>
 
